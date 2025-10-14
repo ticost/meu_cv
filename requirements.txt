@@ -66,10 +66,7 @@ tzdata==2025.2
 urllib3==2.5.0
 watchdog==6.0.0
 wcwidth==0.2.14
-streamlit==1.29.0
 matplotlib==3.8.1
 numpy==1.26.2
 pdfkit==1.0.0
 weasyprint==59.1
-
-
