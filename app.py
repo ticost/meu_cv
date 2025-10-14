@@ -282,17 +282,7 @@ menu = st.sidebar.selectbox(
 st.sidebar.markdown("---")
 st.sidebar.markdown("### 📋 Informações Pessoais")
 
-# Foto na sidebar
-try:
-    st.sidebar.image(
-        "Silmar1.png",
-        caption="Silmar Tolotto",
-        width='stretch'
-    )
-except:
-    st.sidebar.info("📷 Foto não carregada")
-
-# Informações de contato
+# Informações de contato (sem foto)
 st.sidebar.markdown("**📧 E-mail:** silmar.tolotto@gmail.com")
 st.sidebar.markdown("**📱 Celular:** (11) 9 8928-1468")
 st.sidebar.markdown("**🎂 Aniversário:** 09 março de 1969")
@@ -330,10 +320,23 @@ if st.sidebar.button("📄 Gerar PDF Completo", use_container_width=True):
         # Limpar arquivo temporário
         os.unlink(file_path)
 
-# --- Layout principal --- #
-st.markdown("# 📄 Curriculum Vitae")
-st.markdown("## Silmar Tolotto")
-st.markdown("---")
+# --- Layout principal com foto à direita --- #
+col1, col2 = st.columns([3, 1])
+
+with col1:
+    st.markdown("# 📄 Curriculum Vitae")
+    st.markdown("## Silmar Tolotto")
+    st.markdown("---")
+
+with col2:
+    try:
+        st.image(
+            "Silmar1.png",
+            caption="Silmar Tolotto",
+            width=150
+        )
+    except:
+        st.info("📷 Foto não carregada")
 
 # --- Função para barra de proficiência personalizada --- #
 def skill_bar(skill, percent, color="#4CAF50"):
