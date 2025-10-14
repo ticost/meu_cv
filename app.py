@@ -2,6 +2,10 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
+from io import BytesIO
+from reportlab.lib.pagesizes import A4
+from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 
 # --- Configuração da página --- #
 st.set_page_config(
@@ -9,6 +13,96 @@ st.set_page_config(
     page_icon=":briefcase:",
     layout="wide",
     initial_sidebar_state="expanded"
+)
+
+# --- Função para gerar o PDF --- #
+def gerar_pdf():
+    buffer = BytesIO()
+    doc = SimpleDocTemplate(buffer, pagesize=A4)
+    styles = getSampleStyleSheet()
+    elements = []
+
+    elements.append(Paragraph("<b>Currículo Profissional - Silmar Tolotto</b>", styles["Title"]))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("<b>Dados Pessoais</b>", styles["Heading2"]))
+    elements.append(Paragraph("📧 silmar.tolotto@gmail.com", styles["Normal"]))
+    elements.append(Paragraph("📱 (11) 9 8928-1468", styles["Normal"]))
+    elements.append(Paragraph("🎂 09 março de 1969", styles["Normal"]))
+    elements.append(Paragraph("🏠 São Paulo, SP", styles["Normal"]))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("<b>Resumo Profissional</b>", styles["Heading2"]))
+    elements.append(Paragraph("""
+    Gerente de Projetos, Professor e Analista de Infraestrutura de TI, com experiência em ambientes corporativos,
+    metodologias ágeis e foco em inovação, resultados e melhoria contínua.
+    """, styles["Normal"]))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("<b>Experiência Profissional</b>", styles["Heading2"]))
+    experiencias = [
+        "CONVERSYS IT SOLUTIONS (01/2025 - atual) - Analista de Infraestrutura de TI Pleno",
+        "Fundo Social do Estado de SP / Centro Paula Souza (10/2023 - 01/2025) - Professor",
+        "9NET TI, TELECOM E SERVIÇOS (07/2022 - 10/2023) - Gerente de Projetos",
+        "TFA Tecnologia (10/2020 - 07/2022) - Coordenador de Tecnologia",
+        "Sherwin-Williams do Brasil (05/2014 - 08/2019) - Analista de Suporte"
+    ]
+    for exp in experiencias:
+        elements.append(Paragraph(f"- {exp}", styles["Normal"]))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("<b>Formação Acadêmica</b>", styles["Heading2"]))
+    elements.append(Paragraph("UNINOVE - Universidade Nove de Julho", styles["Normal"]))
+    elements.append(Paragraph("Administração de Redes de Computadores e Internet", styles["Normal"]))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("<b>Habilidades Técnicas</b>", styles["Heading2"]))
+    habilidades_tecnicas = [
+        "Excel Avançado (Dashboards, VBA) - 95%",
+        "Análise de Dados e BI - 85%",
+        "AutoCAD (2D/3D, Plantas e Diagramas) - 80%",
+        "Infraestrutura e Redes - 90%",
+        "Python e Automação - 85%"
+    ]
+    for h in habilidades_tecnicas:
+        elements.append(Paragraph(f"- {h}", styles["Normal"]))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("<b>Competências Comportamentais</b>", styles["Heading2"]))
+    habilidades_comportamentais = [
+        "Liderança e Trabalho em Equipe - 90%",
+        "Comunicação Assertiva - 85%",
+        "Proatividade e Foco em Resultados - 90%",
+        "Pensamento Estratégico - 85%",
+        "Resiliência e Adaptabilidade - 95%"
+    ]
+    for h in habilidades_comportamentais:
+        elements.append(Paragraph(f"- {h}", styles["Normal"]))
+    elements.append(Spacer(1, 12))
+
+    elements.append(Paragraph("<b>Certificações e Cursos</b>", styles["Heading2"]))
+    certificacoes = [
+        "Gestão de Projetos 1 a 5", "LGPD", "Fortinet NS1, NS2, NS3",
+        "ITIL Foundation", "Scrum e Liderança Lean", "Python Avançado",
+        "Data Science e Inteligência Artificial", "Power BI e Crystal Reports",
+        "Excel Avançado", "AutoCAD 2D e 3D"
+    ]
+    for c in certificacoes:
+        elements.append(Paragraph(f"- {c}", styles["Normal"]))
+    elements.append(Spacer(1, 12))
+
+    doc.build(elements)
+    buffer.seek(0)
+    return buffer
+
+# --- Botão lateral para gerar PDF --- #
+st.sidebar.markdown("### 📄 Exportar Currículo")
+pdf_buffer = gerar_pdf()
+st.sidebar.download_button(
+    label="⬇️ Baixar em PDF",
+    data=pdf_buffer,
+    file_name="Curriculo_Silmar_Tolotto.pdf",
+    mime="application/pdf"
 )
 
 # --- Menu lateral interativo --- #
@@ -123,7 +217,7 @@ elif menu == "Habilidades":
 
     st.markdown("---")
 
-        # --- Gráfico de radar --- #
+    # --- Gráfico de radar --- #
     st.subheader("📊 Comparativo de Competências (Radar Chart)")
 
     labels = np.array([
@@ -151,11 +245,10 @@ elif menu == "Habilidades":
     ax.fill(angles, behavioral, color="#FF69B4", alpha=0.25)
 
     ax.set_yticklabels([])
-    ax.set_xticks(angles[:-1])                 # ← usar apenas os ângulos originais
-    ax.set_xticklabels(labels, fontsize=10)    # ← sem duplicar labels
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(labels, fontsize=10)
     ax.legend(loc="upper right", bbox_to_anchor=(1.2, 1.1))
     st.pyplot(fig)
-
 
 elif menu == "Certificações":
     st.header("📜 Certificações e Cursos")
