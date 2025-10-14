@@ -287,7 +287,7 @@ try:
     st.sidebar.image(
         "Silmar1.png",
         caption="Silmar Tolotto",
-        width='stretch'  # Corrigido: use_container_width substituído por width
+        width='stretch'
     )
 except:
     st.sidebar.info("📷 Foto não carregada")
