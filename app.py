@@ -1,5 +1,7 @@
 # --- Importar --- #
 import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
 
 # --- Configuração da página --- #
 st.set_page_config(
@@ -31,7 +33,21 @@ st.sidebar.markdown("[🔗 LinkedIn](https://www.linkedin.com/in/silmartolottoa2
 st.markdown("## 💼 Currículo Profissional")
 st.markdown("---")
 
-# --- Seções dinâmicas --- #
+# --- Função para barra de proficiência personalizada --- #
+def skill_bar(skill, percent, color="#4CAF50"):
+    bar_html = f"""
+    <div style="margin-bottom: 10px;">
+        <strong>{skill}</strong>
+        <div style="background-color: #ddd; border-radius: 10px; height: 22px; position: relative;">
+            <div style="width: {percent}%; background-color: {color}; height: 22px; border-radius: 10px;">
+                <span style="position: absolute; right: 8px; color: white; font-weight: bold;">{percent}%</span>
+            </div>
+        </div>
+    </div>
+    """
+    st.markdown(bar_html, unsafe_allow_html=True)
+
+# --- Seções --- #
 if menu == "Resumo":
     st.header("👋🏻 Resumo Profissional")
     st.markdown("""
@@ -85,37 +101,60 @@ elif menu == "Experiência Profissional":
 
 elif menu == "Habilidades":
     st.header("🧩 Habilidades e Competências")
-    st.markdown("Abaixo estão as principais competências técnicas e interpessoais, com níveis de proficiência:")
+    st.markdown("Abaixo estão as principais competências técnicas e comportamentais, com níveis de proficiência:")
 
     col1, col2 = st.columns(2)
 
-    # --- Coluna 1 --- #
     with col1:
-        st.markdown("### 💼 Habilidades Profissionais")
-        st.markdown("🗂️ **Gestão de Projetos**")
-        st.progress(0.9)
-        st.markdown("👥 **Liderança e Trabalho em Equipe**")
-        st.progress(0.85)
-        st.markdown("🗣️ **Comunicação Assertiva**")
-        st.progress(0.8)
-        st.markdown("⚙️ **Resolução de Problemas**")
-        st.progress(0.9)
-        st.markdown("📊 **Excel Avançado (Dashboards, Power Query, VBA)**")
-        st.progress(0.95)
+        st.markdown("### 💻 Competências Técnicas")
+        skill_bar("📊 Excel Avançado (Dashboards, VBA)", 95, "#2E8B57")
+        skill_bar("📈 Análise de Dados e BI", 85, "#4682B4")
+        skill_bar("📐 AutoCAD (2D/3D, Plantas e Diagramas)", 80, "#DAA520")
+        skill_bar("⚙️ Infraestrutura e Redes", 90, "#4B0082")
+        skill_bar("🐍 Python e Automação", 85, "#FF4500")
 
-    # --- Coluna 2 --- #
     with col2:
-        st.markdown("### 🧠 Competências Analíticas e Técnicas")
-        st.markdown("📈 **Análise de Dados e BI**")
-        st.progress(0.85)
-        st.markdown("📐 **AutoCAD (2D/3D, Plantas e Diagramas de Rede)**")
-        st.progress(0.8)
-        st.markdown("🔍 **Pensamento Estratégico**")
-        st.progress(0.85)
-        st.markdown("🚀 **Proatividade e Foco em Resultados**")
-        st.progress(0.9)
-        st.markdown("🧩 **Resiliência Profissional e Adaptabilidade**")
-        st.progress(0.9)
+        st.markdown("### 🤝 Competências Comportamentais")
+        skill_bar("👥 Liderança e Trabalho em Equipe", 90, "#3CB371")
+        skill_bar("🗣️ Comunicação Assertiva", 85, "#4682B4")
+        skill_bar("🚀 Proatividade e Foco em Resultados", 90, "#DA70D6")
+        skill_bar("🧠 Pensamento Estratégico", 85, "#6A5ACD")
+        skill_bar("🧩 Resiliência e Adaptabilidade", 95, "#008B8B")
+
+    st.markdown("---")
+
+    # --- Gráfico de radar --- #
+    st.subheader("📊 Comparativo de Competências (Radar Chart)")
+
+    labels = np.array([
+        "Excel / BI", 
+        "AutoCAD", 
+        "Infraestrutura", 
+        "Comunicação", 
+        "Liderança", 
+        "Resiliência"
+    ])
+    technical = np.array([95, 80, 90, 0, 0, 0])   # técnicas
+    behavioral = np.array([0, 0, 0, 85, 90, 95])  # comportamentais
+
+    # unindo para formar círculo
+    labels = np.concatenate((labels, [labels[0]]))
+    technical = np.concatenate((technical, [technical[0]]))
+    behavioral = np.concatenate((behavioral, [behavioral[0]]))
+
+    angles = np.linspace(0, 2 * np.pi, len(labels))
+
+    fig, ax = plt.subplots(figsize=(5, 5), subplot_kw=dict(polar=True))
+    ax.plot(angles, technical, color="#1E90FF", linewidth=2, label="Técnicas")
+    ax.fill(angles, technical, color="#1E90FF", alpha=0.25)
+    ax.plot(angles, behavioral, color="#FF69B4", linewidth=2, label="Comportamentais")
+    ax.fill(angles, behavioral, color="#FF69B4", alpha=0.25)
+
+    ax.set_yticklabels([])
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(labels)
+    ax.legend(loc="upper right", bbox_to_anchor=(1.2, 1.1))
+    st.pyplot(fig)
 
 elif menu == "Certificações":
     st.header("📜 Certificações e Cursos")
@@ -128,7 +167,7 @@ elif menu == "Certificações":
     - 🐍 Python (Básico, Intermediário, Avançado)  
     - 🤖 Data Science e Inteligência Artificial  
     - 📊 Power BI e Crystal Reports  
-    - 🧮 Excel Avançado (Dashboards, Fórmulas Complexas, Power Query e VBA)  
+    - 🧮 Excel Avançado (Dashboards, Fórmulas, Power Query e VBA)  
     - 📐 AutoCAD (2D e 3D, Plantas Técnicas e Layouts Industriais)  
     - 💰 Administração e Planejamento Financeiro  
     """)
@@ -144,8 +183,3 @@ elif menu == "Atividades e Voluntariado":
 
 st.markdown("---")
 st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
-
-
-
-
-
