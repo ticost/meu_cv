@@ -105,7 +105,7 @@ Experiência em projetos sociais e modernização de infraestrutura de TI.
 Implantação de soluções Cisco e PoE em empresas de grande porte.
 
 _________________________________________
-
+Silmar Tolotto
 São Paulo, 14 de outubro de 2025
 
 Desenvolvido com Streamlit | © 2025 - Silmar Tolotto"""
@@ -277,7 +277,6 @@ Desenvolvido com Streamlit | © 2025 - Silmar Tolotto"""
     # Espaço para a imagem da assinatura
     try:
         # Tentar carregar a imagem da assinatura
-        # Nome do arquivo: "assinatura.png" ou "assinatura.jpg"
         assinatura_files = ["assinatura.png", "assinatura.jpg", "assinatura.jpeg", "signature.png"]
         assinatura_encontrada = False
         
@@ -393,5 +392,240 @@ with col2:
     except:
         st.info("📷 Foto não carregada")
 
-# --- Resto do código permanece igual --- #
-# ... (função skill_bar e seções do currículo)
+# --- Função para barra de proficiência personalizada --- #
+def skill_bar(skill, percent, color="#4CAF50"):
+    bar_html = f"""
+    <div style="margin-bottom: 10px;">
+        <strong>{skill}</strong>
+        <div style="background-color: #ddd; border-radius: 10px; height: 22px; position: relative;">
+            <div style="width: {percent}%; background-color: {color}; height: 22px; border-radius: 10px;">
+                <span style="position: absolute; right: 8px; color: white; font-weight: bold;">{percent}%</span>
+            </div>
+        </div>
+    </div>
+    """
+    st.markdown(bar_html, unsafe_allow_html=True)
+
+# --- Seções do Menu --- #
+if menu == "Resumo":
+    st.header("👋🏻 Resumo Profissional")
+    st.markdown("""
+    **Gerente de Projetos, Professor e Analista de Infraestrutura de TI**, organizado e orientado a resultados.  
+    
+    **Sólida experiência** em gestão de ambientes corporativos e aplicação de metodologias ágeis.  
+    
+    **Profissional** com forte espírito de equipe e foco em inovação e melhoria contínua.
+    
+    ### 🎯 Objetivo
+    Atuar em posições de liderança e gestão de projetos de TI, contribuindo com minha experiência 
+    em infraestrutura, metodologias ágeis e desenvolvimento de equipes de alta performance.
+    """)
+
+elif menu == "Formação":
+    st.header("🎓 Formação Acadêmica")
+    
+    col1, col2 = st.columns([3, 1])
+    
+    with col1:
+        st.markdown("""
+        **UNINOVE - Universidade Nove de Julho**  
+        📘 *Administração de Redes de Computadores e Internet*
+        
+        - **Período:** 2010 - 2013
+        - **Área de Estudo:** Redes de computadores, infraestrutura de TI, segurança da informação
+        - **Projeto Final:** Implementação de rede segura para pequenas empresas
+        """)
+    
+    with col2:
+        st.markdown("""
+        ### 📚 Cursos Complementares
+        - Gestão de Projetos
+        - Scrum Master
+        - LGPD
+        - ITIL Foundation
+        """)
+
+elif menu == "Experiência Profissional":
+    st.header("💼 Experiência Profissional")
+
+    with st.expander("CONVERSYS IT SOLUTIONS (01/2025 - atual)", expanded=True):
+        st.markdown("""
+        **Cargo:** Analista de Infraestrutura de TI Pleno
+        
+        **Principais Responsabilidades:**
+        - Gestão de ambientes corporativos complexos com foco em desempenho e segurança
+        - Especialista em servidores, redes, virtualização e automação
+        - Implementação de soluções de infraestrutura em nuvem
+        - Monitoramento e otimização de performance de sistemas
+        
+        **Tecnologias:** VMware, Cisco, Azure, PowerShell, Python
+        """)
+
+    with st.expander("Fundo Social do Estado de SP / Centro Paula Souza (10/2023 - 01/2025)"):
+        st.markdown("""
+        **Cargo:** Professor
+        
+        **Áreas de Atuação:**
+        - Administração
+        - Empreendedorismo  
+        - Informática
+        - Gestão de Projetos
+        
+        **Atividades:** Desenvolvimento de material didático, ministração de aulas práticas e teóricas
+        """)
+
+    with st.expander("9NET TI, TELECOM E SERVIÇOS (07/2022 - 10/2023)"):
+        st.markdown("""
+        **Cargo:** Gerente de Projetos
+        
+        **Principais Projetos:**
+        - **CIA Matarazzo:** Modernização de infraestrutura de rede
+        - **ALUBAR:** Implementação de data center
+        - **BP Bunge:** Migração para nuvem híbrida
+        
+        **Metodologias:** Scrum, Kanban, PMBOK
+        **KPIs:** Redução de 30% no tempo de entrega dos projetos
+        """)
+
+    with st.expander("TFA Tecnologia (10/2020 - 07/2022)"):
+        st.markdown("""
+        **Cargo:** Coordenador de Tecnologia
+        
+        **Principais Conquistas:**
+        - Gestão de equipe com Scrum e Kanban
+        - Desenvolvimento de ERP para inventário de TI
+        - Redução de custos em 25% através de automação
+        - Implementação de práticas DevOps
+        """)
+
+    with st.expander("Sherwin-Williams do Brasil (05/2014 - 08/2019)"):
+        st.markdown("""
+        **Cargo:** Analista de Suporte
+        
+        **Principais Atividades:**
+        - Implantação de PABX IP Cisco
+        - Gestão de rede Wi-Fi corporativa
+        - Administração de linhas móveis
+        - Atualização de equipamentos de TI
+        """)
+
+elif menu == "Habilidades":
+    st.header("🧩 Habilidades e Competências")
+    st.markdown("Abaixo estão as principais competências técnicas e comportamentais, com níveis de proficiência:")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### 💻 Competências Técnicas")
+        skill_bar("📊 Excel Avançado (Dashboards, VBA)", 95, "#2E8B57")
+        skill_bar("📈 Análise de Dados e BI", 85, "#4682B4")
+        skill_bar("📐 AutoCAD (2D/3D, Plantas e Diagramas)", 80, "#DAA520")
+        skill_bar("⚙️ Infraestrutura e Redes", 90, "#4B0082")
+        skill_bar("🐍 Python e Automação", 85, "#FF4500")
+
+    with col2:
+        st.markdown("### 🤝 Competências Comportamentais")
+        skill_bar("👥 Liderança e Trabalho em Equipe", 90, "#3CB371")
+        skill_bar("🗣️ Comunicação Assertiva", 85, "#4682B4")
+        skill_bar("🚀 Proatividade e Foco em Resultados", 90, "#DA70D6")
+        skill_bar("🧠 Pensamento Estratégico", 85, "#6A5ACD")
+        skill_bar("🧩 Resiliência e Adaptabilidade", 95, "#008B8B")
+
+    st.markdown("---")
+
+    # --- Gráfico de radar --- #
+    st.subheader("📊 Comparativo de Competências (Radar Chart)")
+
+    labels = np.array([
+        "Excel / BI", 
+        "AutoCAD", 
+        "Infraestrutura", 
+        "Comunicação", 
+        "Liderança", 
+        "Resiliência"
+    ])
+    technical = np.array([95, 80, 90, 0, 0, 0])   # técnicas
+    behavioral = np.array([0, 0, 0, 85, 90, 95])  # comportamentais
+
+    # Fechar o gráfico adicionando o primeiro ponto no final
+    angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
+    angles += angles[:1]
+
+    technical = np.concatenate((technical, [technical[0]]))
+    behavioral = np.concatenate((behavioral, [behavioral[0]]))
+
+    fig, ax = plt.subplots(figsize=(5, 5), subplot_kw=dict(polar=True))
+    ax.plot(angles, technical, color="#1E90FF", linewidth=2, label="Técnicas")
+    ax.fill(angles, technical, color="#1E90FF", alpha=0.25)
+    ax.plot(angles, behavioral, color="#FF69B4", linewidth=2, label="Comportamentais")
+    ax.fill(angles, behavioral, color="#FF69B4", alpha=0.25)
+
+    ax.set_yticklabels([])
+    ax.set_xticks(angles[:-1])                 # ← usar apenas os ângulos originais
+    ax.set_xticklabels(labels, fontsize=10)    # ← sem duplicar labels
+    ax.legend(loc="upper right", bbox_to_anchor=(1.2, 1.1))
+    st.pyplot(fig)
+
+elif menu == "Certificações":
+    st.header("📜 Certificações e Cursos")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        ### 🎯 Gestão e Metodologias
+        - **Gestão de Projetos 1 a 5** - PMI
+        - **Scrum Master** - Scrum Alliance
+        - **Liderança Lean** - Lean Institute
+        - **ITIL Foundation** - AXELOS
+        
+        ### 🔒 Segurança e LGPD
+        - **LGPD** - EXIN
+        - **Fortinet NS1, NS2, NS3** - Fortinet
+        - **Cybersecurity Fundamentals** - ISC²
+        """)
+    
+    with col2:
+        st.markdown("""
+        ### 💻 Tecnologia e Desenvolvimento
+        - **Python** (Básico, Intermediário, Avançado) - Alura
+        - **Data Science e IA** - Data Science Academy
+        - **Power BI e Crystal Reports** - Microsoft
+        - **Excel Avançado** (Dashboards, Power Query, VBA) - Udemy
+        
+        ### 🛠️ Ferramentas Especializadas
+        - **AutoCAD** (2D e 3D) - Autodesk
+        - **Administração Financeira** - FGV
+        - **Cloud Computing** - AWS Academy
+        """)
+
+elif menu == "Atividades e Voluntariado":
+    st.header("🤝 Atividades e Voluntariado")
+    
+    st.markdown("""
+    ### 🏕️ Centro Escoteiro Jaraguá
+    **Desde 2015** - *Responsável e Coordenador*
+    
+    **Principais Atividades:**
+    - Coordenação de atividades escoteiras para jovens
+    - Instrução de cursos para líderes e voluntários do Estado de SP
+    - Organização de acampamentos e eventos comunitários
+    - Desenvolvimento de programas educacionais
+    
+    ### 🔧 Projetos Sociais de TI
+    **Experiência** em modernização de infraestrutura de TI para instituições sem fins lucrativos
+    
+    **Principais Realizações:**
+    - Implantação de soluções Cisco e PoE em empresas de grande porte
+    - Modernização de laboratórios de informática em escolas públicas
+    - Capacitação de jovens em tecnologia
+    - Implementação de redes Wi-Fi comunitárias
+    
+    ### 🎖️ Reconhecimentos
+    - **Medalha do Mérito Escoteiro** - 2018
+    - **Voluntário Destaque** - Secretaria de Educação do Estado de SP - 2020
+    - **Certificado de Agradecimento** - Prefeitura de São Paulo - 2022
+    """)
+
+st.markdown("---")
+st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
