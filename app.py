@@ -146,6 +146,6 @@ st.markdown("---")
 st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
 
 
-st.markdown("---")
-st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
+
+
 
