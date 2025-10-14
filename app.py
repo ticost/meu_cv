@@ -28,11 +28,24 @@ def skill_bar(skill, percent, color="#4CAF50"):
     <div style="margin-bottom: 10px;">
         <strong>{skill}</strong>
         <div style="background-color: #ddd; border-radius: 10px; height: 22px; position: relative;">
-            <div style="width: {percent}%; background-color: {color}; height: 22px; border-radius: 10px;">
+            <div style="width: 0%; background-color: {color}; height: 22px; border-radius: 10px;" id="bar">
                 <span style="position: absolute; right: 8px; color: white; font-weight: bold;">{percent}%</span>
             </div>
         </div>
     </div>
+    <script>
+    var elem = document.currentScript.parentElement.querySelector('#bar');
+    var width = 0;
+    var id = setInterval(frame, 10);
+    function frame() {{
+        if (width >= {percent}) {{
+            clearInterval(id);
+        }} else {{
+            width++;
+            elem.style.width = width + '%';
+        }}
+    }}
+    </script>
     """
     st.markdown(bar_html, unsafe_allow_html=True)
 
@@ -202,4 +215,59 @@ elif menu == "Habilidades":
         skill_bar("🐍 Python e Automação", 85, "#FF4500")
     with col2:
         st.markdown("### 🤝 Comportamentais")
-        skill_bar("
+        skill_bar("👥 Liderança e Trabalho em Equipe", 90, "#3CB371")
+        skill_bar("🗣️ Comunicação Assertiva", 85, "#4682B4")
+        skill_bar("🚀 Proatividade e Foco em Resultados", 90, "#DA70D6")
+        skill_bar("🧠 Pensamento Estratégico", 85, "#6A5ACD")
+        skill_bar("🧩 Resiliência e Adaptabilidade", 95, "#008B8B")
+
+    st.markdown("---")
+    # --- Gráfico de radar ---
+    st.subheader("📊 Comparativo de Competências (Radar Chart)")
+
+    labels = np.array(["Excel / BI","AutoCAD","Infraestrutura","Comunicação","Liderança","Resiliência"])
+    technical = np.array([95, 80, 90, 0, 0, 0])
+    behavioral = np.array([0, 0, 0, 85, 90, 95])
+    angles = np.linspace(0, 2 * np.pi, len(labels), endpoint=False).tolist()
+    angles += angles[:1]
+    technical = np.concatenate((technical, [technical[0]]))
+    behavioral = np.concatenate((behavioral, [behavioral[0]]))
+
+    fig, ax = plt.subplots(figsize=(5,5), subplot_kw=dict(polar=True))
+    ax.plot(angles, technical, color="#1E90FF", linewidth=2, label="Técnicas")
+    ax.fill(angles, technical, color="#1E90FF", alpha=0.25)
+    ax.plot(angles, behavioral, color="#FF69B4", linewidth=2, label="Comportamentais")
+    ax.fill(angles, behavioral, color="#FF69B4", alpha=0.25)
+    ax.set_yticklabels([])
+    ax.set_xticks(angles[:-1])
+    ax.set_xticklabels(labels, fontsize=10)
+    ax.legend(loc="upper right", bbox_to_anchor=(1.2,1.1))
+    st.pyplot(fig)
+
+elif menu == "Certificações":
+    st.header("📜 Certificações e Cursos")
+    st.markdown("""
+    - Gestão de Projetos 1 a 5  
+    - LGPD  
+    - Fortinet NS1, NS2, NS3  
+    - ITIL Foundation  
+    - Scrum e Liderança Lean  
+    - Python (Básico, Intermediário, Avançado)  
+    - Data Science e Inteligência Artificial  
+    - Power BI e Crystal Reports  
+    - Excel Avançado (Dashboards, Fórmulas, Power Query e VBA)  
+    - AutoCAD (2D e 3D, Plantas Técnicas e Layouts Industriais)  
+    - Administração e Planejamento Financeiro  
+    """)
+
+elif menu == "Atividades e Voluntariado":
+    st.header("🤝 Atividades e Voluntariado")
+    st.markdown("""
+    - Desde 2015, responsável pelo **Centro Escoteiro Jaraguá**  
+    - Coordenação e instrução de cursos para líderes e voluntários do Estado de SP  
+    - Experiência em projetos sociais e modernização de infraestrutura de TI  
+    - Implantação de soluções Cisco e PoE em empresas de grande porte
+    """)
+
+st.markdown("---")
+st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
