@@ -84,40 +84,53 @@ elif menu == "Experiência Profissional":
     """)
 
 elif menu == "Habilidades":
-    st.header("🧩 Habilidades")
+    st.header("🧩 Habilidades e Competências")
+    st.markdown("Abaixo estão as principais competências técnicas e interpessoais, com níveis de proficiência:")
+
     col1, col2 = st.columns(2)
 
+    # --- Coluna 1 --- #
     with col1:
-        st.markdown("""
-        - Gestão de Projetos  
-        - Liderança e Trabalho em Equipe  
-        - Comunicação Assertiva  
-        - Resolução de Problemas  
-        - Organização e Planejamento
-        """)
+        st.markdown("### 💼 Habilidades Profissionais")
+        st.markdown("🗂️ **Gestão de Projetos**")
+        st.progress(0.9)
+        st.markdown("👥 **Liderança e Trabalho em Equipe**")
+        st.progress(0.85)
+        st.markdown("🗣️ **Comunicação Assertiva**")
+        st.progress(0.8)
+        st.markdown("⚙️ **Resolução de Problemas**")
+        st.progress(0.9)
+        st.markdown("📊 **Excel Avançado (Dashboards, Power Query, VBA)**")
+        st.progress(0.95)
 
+    # --- Coluna 2 --- #
     with col2:
-        st.markdown("""
-        - Flexibilidade e Adaptabilidade  
-        - Proatividade e Foco em Resultados  
-        - Análise de Dados  
-        - Pensamento Estratégico  
-        - Resiliência Profissional
-        """)
+        st.markdown("### 🧠 Competências Analíticas e Técnicas")
+        st.markdown("📈 **Análise de Dados e BI**")
+        st.progress(0.85)
+        st.markdown("📐 **AutoCAD (2D/3D, Plantas e Diagramas de Rede)**")
+        st.progress(0.8)
+        st.markdown("🔍 **Pensamento Estratégico**")
+        st.progress(0.85)
+        st.markdown("🚀 **Proatividade e Foco em Resultados**")
+        st.progress(0.9)
+        st.markdown("🧩 **Resiliência Profissional e Adaptabilidade**")
+        st.progress(0.9)
 
 elif menu == "Certificações":
     st.header("📜 Certificações e Cursos")
     st.markdown("""
-    - Gestão de Projetos 1 a 5  
-    - LGPD  
-    - Fortinet NS1, NS2, NS3  
-    - ITIL Foundation  
-    - Scrum e Liderança Lean  
-    - Python (Básico, Intermediário, Avançado)  
-    - Data Science e Inteligência Artificial  
-    - Power BI e Crystal Reports  
-    - Administração e Planejamento Financeiro  
-    - Fundamentos de Data Science e Inteligência Artificial  
+    - 🎯 Gestão de Projetos 1 a 5  
+    - 🧩 LGPD  
+    - 🔒 Fortinet NS1, NS2, NS3  
+    - 🧠 ITIL Foundation  
+    - ⚡ Scrum e Liderança Lean  
+    - 🐍 Python (Básico, Intermediário, Avançado)  
+    - 🤖 Data Science e Inteligência Artificial  
+    - 📊 Power BI e Crystal Reports  
+    - 🧮 Excel Avançado (Dashboards, Fórmulas Complexas, Power Query e VBA)  
+    - 📐 AutoCAD (2D e 3D, Plantas Técnicas e Layouts Industriais)  
+    - 💰 Administração e Planejamento Financeiro  
     """)
 
 elif menu == "Atividades e Voluntariado":
@@ -131,3 +144,8 @@ elif menu == "Atividades e Voluntariado":
 
 st.markdown("---")
 st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
+
+
+st.markdown("---")
+st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
+
