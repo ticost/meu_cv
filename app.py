@@ -2,11 +2,18 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
-from fpdf import FPDF
 import base64
 from io import BytesIO
 import tempfile
 import os
+
+# Verificar se fpdf está disponível
+try:
+    from fpdf import FPDF
+    FPDF_AVAILABLE = True
+except ImportError:
+    FPDF_AVAILABLE = False
+    st.sidebar.error("❌ Biblioteca FPDF não instalada. O PDF será gerado em formato texto.")
 
 # --- Configuração da página --- #
 st.set_page_config(
@@ -18,7 +25,94 @@ st.set_page_config(
 
 # --- Função para gerar PDF --- #
 def generate_pdf():
-    # Criar PDF
+    if not FPDF_AVAILABLE:
+        # Fallback: criar um arquivo de texto com o currículo
+        content = """CURRICULUM VITAE - SILMAR TOLOTTO
+
+INFORMAÇÕES PESSOAIS:
+E-mail: silmar.tolotto@gmail.com
+Celular: (11) 9 8928-1468
+Endereço: Rua Cajati, 345 Freguesia do Ó - CEP 02729-040 São Paulo - SP
+Nascimento: 09 de março de 1969
+LinkedIn: https://www.linkedin.com/in/silmartolottoa227716
+
+RESUMO PROFISSIONAL:
+Gerente de Projetos, Professor e Analista de Infraestrutura de TI, organizado e orientado a resultados. 
+Sólida experiência em gestão de ambientes corporativos e aplicação de metodologias ágeis. 
+Profissional com forte espírito de equipe e foco em inovação e melhoria contínua.
+
+FORMAÇÃO ACADÊMICA:
+UNINOVE - Universidade Nove de Julho
+Administração de Redes de Computadores e Internet
+
+EXPERIÊNCIA PROFISSIONAL:
+CONVERSYS IT SOLUTIONS (01/2025 - atual)
+- Analista de Infraestrutura de TI Pleno
+- Gestão de ambientes corporativos complexos com foco em desempenho e segurança
+- Especialista em servidores, redes, virtualização e automação
+
+Fundo Social do Estado de SP / Centro Paula Souza (10/2023 - 01/2025)
+- Professor nas áreas de Administração, Empreendedorismo e Informática
+
+9NET TI, TELECOM E SERVIÇOS (07/2022 - 10/2023)
+- Gerente de Projetos: gestão técnica e operacional de infraestrutura de TI
+- Projetos: CIA Matarazzo, ALUBAR, BP Bunge
+- Aplicação de metodologias ágeis, governança e KPIs
+
+TFA Tecnologia (10/2020 - 07/2022)
+- Coordenador de Tecnologia
+- Gestão de equipe com Scrum e Kanban
+- Desenvolvimento de ERP para inventário de TI
+
+Sherwin-Williams do Brasil (05/2014 - 08/2019)
+- Analista de Suporte
+- Implantação de PABX IP Cisco, rede Wi-Fi e linhas móveis
+- Gestão de contas operadoras e atualização de equipamentos de TI
+
+HABILIDADES E COMPETÊNCIAS:
+COMPETÊNCIAS TÉCNICAS:
+- Excel Avançado (Dashboards, VBA) - 95%
+- Análise de Dados e BI - 85%
+- AutoCAD (2D/3D, Plantas e Diagramas) - 80%
+- Infraestrutura e Redes - 90%
+- Python e Automação - 85%
+
+COMPETÊNCIAS COMPORTAMENTAIS:
+- Liderança e Trabalho em Equipe - 90%
+- Comunicação Assertiva - 85%
+- Proatividade e Foco em Resultados - 90%
+- Pensamento Estratégico - 85%
+- Resiliência e Adaptabilidade - 95%
+
+CERTIFICAÇÕES E CURSOS:
+- Gestão de Projetos 1 a 5
+- LGPD
+- Fortinet NS1, NS2, NS3
+- ITIL Foundation
+- Scrum e Liderança Lean
+- Python (Básico, Intermediário, Avançado)
+- Data Science e Inteligência Artificial
+- Power BI e Crystal Reports
+- Excel Avançado (Dashboards, Fórmulas, Power Query e VBA)
+- AutoCAD (2D e 3D, Plantas Técnicas e Layouts Industriais)
+- Administração e Planejamento Financeiro
+
+ATIVIDADES E VOLUNTARIADO:
+Desde 2015, responsável pelo Centro Escoteiro Jaraguá.
+Coordenação e instrução de cursos para líderes e voluntários do Estado de SP.
+Experiência em projetos sociais e modernização de infraestrutura de TI.
+Implantação de soluções Cisco e PoE em empresas de grande porte.
+
+Desenvolvido com Streamlit | © 2025 - Silmar Tolotto"""
+        
+        # Criar arquivo temporário
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".txt", mode='w', encoding='utf-8')
+        temp_file.write(content)
+        temp_file.close()
+        
+        return temp_file.name
+    
+    # Se FPDF estiver disponível, usar a versão original com gráficos
     pdf = FPDF()
     pdf.add_page()
     
@@ -42,7 +136,7 @@ def generate_pdf():
     pdf.set_font("Arial", size=9)
     pdf.cell(200, 5, txt="E-mail: silmar.tolotto@gmail.com", ln=True)
     pdf.cell(200, 5, txt="Celular: (11) 9 8928-1468", ln=True)
-    pdf.cell(200, 5, txt="Endereço: Rua Cajati, 345 Freguesia do Ó - CEP 02729-040  São Paulo - SP", ln=True)
+    pdf.cell(200, 5, txt="Endereco: Rua Cajati, 345 Freguesia do O - Sao Paulo - SP", ln=True)
     pdf.cell(200, 5, txt="Nascimento: 09 marco de 1969", ln=True)
     pdf.cell(200, 5, txt="LinkedIn: https://www.linkedin.com/in/silmartolottoa227716", ln=True)
     pdf.ln(5)
@@ -122,7 +216,7 @@ def generate_pdf():
         # Salvar gráfico como imagem temporária
         chart_temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".png")
         plt.savefig(chart_temp_file.name, dpi=100, bbox_inches='tight')
-        plt.close(fig)  # FECHAR A FIGURA EXPLICITAMENTE
+        plt.close(fig)  # Fechar a figura explicitamente
         
         # Adicionar gráfico ao PDF
         pdf.set_font("Arial", 'B', 11)
@@ -189,11 +283,14 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("### 📋 Informações Pessoais")
 
 # Foto na sidebar
-st.sidebar.image(
-    "Silmar1.png",
-    caption="Silmar Tolotto",
-    use_container_width=True
-)
+try:
+    st.sidebar.image(
+        "Silmar1.png",
+        caption="Silmar Tolotto",
+        use_container_width=True
+    )
+except:
+    st.sidebar.info("📷 Foto não carregada")
 
 # Informações de contato
 st.sidebar.markdown("**📧 E-mail:** silmar.tolotto@gmail.com")
@@ -205,19 +302,33 @@ st.sidebar.markdown("**🔗 LinkedIn:** [silmartolottoa227716](https://www.linke
 # --- Botão para gerar PDF --- #
 st.sidebar.markdown("---")
 if st.sidebar.button("📄 Gerar PDF Completo", use_container_width=True):
-    with st.spinner("Gerando PDF..."):
-        pdf_path = generate_pdf()
+    with st.spinner("Gerando arquivo..."):
+        file_path = generate_pdf()
         
-        with open(pdf_path, "rb") as f:
-            pdf_bytes = f.read()
+        with open(file_path, "rb") as f:
+            file_bytes = f.read()
+        
+        # Determinar o tipo de arquivo e extensão
+        if file_path.endswith('.pdf'):
+            mime_type = "application/pdf"
+            file_extension = "pdf"
+            download_name = "Curriculo_Silmar_Tolotto.pdf"
+            success_message = "✅ PDF gerado com sucesso!"
+        else:
+            mime_type = "text/plain"
+            file_extension = "txt"
+            download_name = "Curriculo_Silmar_Tolotto.txt"
+            success_message = "📄 Arquivo de texto gerado (PDF não disponível)"
         
         # Criar link de download
-        b64 = base64.b64encode(pdf_bytes).decode()
-        href = f'<a href="data:application/octet-stream;base64,{b64}" download="Curriculo_Silmar_Tolotto.pdf">⬇️ Clique aqui para baixar o PDF</a>'
+        b64 = base64.b64encode(file_bytes).decode()
+        href = f'<a href="data:{mime_type};base64,{b64}" download="{download_name}">⬇️ Clique aqui para baixar o {file_extension.upper()}</a>'
+        
+        st.sidebar.success(success_message)
         st.sidebar.markdown(href, unsafe_allow_html=True)
         
         # Limpar arquivo temporário
-        os.unlink(pdf_path)
+        os.unlink(file_path)
 
 # --- Layout principal --- #
 st.markdown("# 📄 Curriculum Vitae")
@@ -314,7 +425,7 @@ elif menu == "Habilidades":
 
     st.markdown("---")
 
-   # --- Gráfico de radar --- #
+    # --- Gráfico de radar --- #
     st.subheader("📊 Comparativo de Competências (Radar Chart)")
 
     labels = np.array([
