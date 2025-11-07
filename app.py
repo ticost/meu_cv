@@ -35,7 +35,7 @@ E-mail: silmar.tolotto@gmail.com
 Celular: (11) 9 8928-1468
 Endereço: Rua Cajati, 345 Freguesia do Ó - CEP 02729-040 São Paulo - SP
 Nascimento: 09 de março de 1969
-LinkedIn: https://www.linkedin.com/in/silmar-tolotto-0a227716/
+LinkedIn: www.linkedin.com/in/silmar-tolotto-0a227716/
 
 
 RESUMO PROFISSIONAL:
@@ -630,5 +630,6 @@ elif menu == "Atividades e Voluntariado":
 
 st.markdown("---")
 st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
+
 
 
