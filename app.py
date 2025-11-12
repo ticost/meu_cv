@@ -489,10 +489,8 @@ elif menu == "Experiência Profissional":
         **Cargo:** Analista de Infraestrutura de TI Pleno
         
         **Principais Responsabilidades:**
-        - Gestão de ambientes corporativos complexos com foco em desempenho e segurança
-        - Especialista em servidores, redes, virtualização e automação
-        - Implementação de soluções de infraestrutura em nuvem
-        - Monitoramento e otimização de performance de sistemas
+        • Responsável pela administração e otimização de ambientes corporativos complexos, garantindo alto desempenho, disponibilidade e segurança das operações de TI.
+        • Atuo no gerenciamento de servidores, redes, soluções de virtualização e automação de processos, com foco em eficiência, estabilidade e inovação tecnológica.
         
         **Tecnologias:** VMware, Cisco, Azure, PowerShell, Python
         """)
@@ -502,10 +500,9 @@ elif menu == "Experiência Profissional":
         **Cargo:** Professor
         
         **Áreas de Atuação:**
-        - Administração
-        - Empreendedorismo  
-        - Informática
-        - Gestão de Projetos
+        • Professor nas áreas de Administração, Empreendedorismo e Informática
+        • Atuação no desenvolvimento e condução de aulas voltadas às áreas de Administração, Empreendedorismo e Informática, com foco em promover o aprendizado prático e o pensamento crítico dos alunos.
+        • Responsável pela elaboração de planos de ensino, aplicação de metodologias ativas e acompanhamento do desempenho estudantil, incentivando o desenvolvimento de competências técnicas e comportamentais voltadas ao mercado de trabalho.
         
         **Atividades:** Desenvolvimento de material didático, ministração de aulas práticas e teóricas
         """)
@@ -514,13 +511,16 @@ elif menu == "Experiência Profissional":
         st.markdown("""
         **Cargo:** Gerente de Projetos
         
-        **Principais Projetos:**
-        - **CIA Matarazzo:** Modernização de infraestrutura de rede
-        - **ALUBAR:** Implementação de data center
-        - **BP Bunge:** Migração para nuvem híbrida
-        
-        **Metodologias:** Scrum, Kanban, PMBOK
-        **KPIs:** Redução de 30% no tempo de entrega dos projetos
+        • Gestão completa da entrega de projetos, abrangendo cronograma, custos, escopo e integração entre equipes;
+        • Gerenciamento de recursos e definição de métricas de performance;
+        • Comunicação e governança de projetos, assegurando alinhamento entre áreas e partes interessadas;
+        • Criação e aplicação de padrões, metodologias e processos para melhoria contínua;
+        • Análise de riscos, elaboração de planos de mitigação e monitoramento de desempenho;
+        • Desenvolvimento de relatórios executivos e indicadores de performance (KPIs).
+        • Principais Projetos e Resultados:
+        • CIA Matarazzo: Gerenciamento de um complexo composto por shoppings, dois hotéis (SORO e ROSEWOOD) e coworking (AYA). Coordenei equipes multidisciplinares para implantações de plantas CAD, softwares, equipamentos e processos operacionais.
+        • Alubar: Condução de projeto internacional em Memphis (EUA), além da gestão de firewalls corporativos em localidades como Casa Rosada, Becancour, São Paulo, Coita, Miami, Barcarena e Montenegro.
+        • BP Bunge: Liderança no refresh de software e equipamentos, garantindo modernização e continuidade operacional com mínimo impacto nos negócios.
         """)
 
     with st.expander("TFA Tecnologia (10/2020 - 07/2022)"):
@@ -528,10 +528,17 @@ elif menu == "Experiência Profissional":
         **Cargo:** Coordenador de Tecnologia
         
         **Principais Conquistas:**
-        - Gestão de equipe com Scrum e Kanban
-        - Desenvolvimento de ERP para inventário de TI
-        - Redução de custos em 25% através de automação
-        - Implementação de práticas DevOps
+        • Era responsável pela administração e infraestrutura de redes corporativas, abrangendo ambientes WAN, LAN e WLAN, além de servidores virtuais e físicos.
+        • Atuava no planejamento, implementação e monitoramento de soluções tecnológicas para garantir segurança, estabilidade e performance dos sistemas. Realizava o desenho e implantação de projetos de otimização de
+rede e topologias;
+        • Configuração e análise de regras de firewall e políticas de segurança;
+        • Administração de servidores Hyper-V, VMware e Senha Segura;
+        • Gestão de antivírus corporativo, câmeras de monitoramento e suporte técnico (Help Desk);
+        • Gerenciamento de contratos de software e licenciamento;
+        • Administração de Windows Server 2008/2012 R2, políticas de backup e armazenamento;
+        • Gerenciamento do Microsoft 365 e Exchange Online;
+        • Conhecimento em bancos de dados MySQL e SQL Server;
+        • Desenvolvimento de sistemas internos e sites utilizando PHP, HTML, CSS e MySQL.
         """)
 
     with st.expander("Sherwin-Williams do Brasil (05/2014 - 08/2019)"):
@@ -539,10 +546,40 @@ elif menu == "Experiência Profissional":
         **Cargo:** Analista de Suporte
         
         **Principais Atividades:**
-        - Implantação de PABX IP Cisco
-        - Gestão de rede Wi-Fi corporativa
-        - Administração de linhas móveis
-        - Atualização de equipamentos de TI
+        • Atuei como analista na Sherwin-Williams entre 2013 e 2016, período em que fui promovido ao cargo de coordenador.
+        • Era responsável pela organização e otimização dos recursos de telefonia móvel e fixa da empresa, com foco em controle de custos, eficiência operacional e padronização de processos.
+        • Criação de sistema de gestão e relatórios para monitoramento e controle dos gastos com telefonia;
+        • Redução significativa de custos, diminuindo em um terço as despesas com telefonia móvel;
+        • Implantação de dispositivos iOS (iPhone e iPad) para diretoria, gerências, coordenadores e equipe comercial;
+        • Desenvolvimento e aplicação de política corporativa de uso de telefonia móvel e fixa;
+        • Gerenciamento de equipamentos, manutenção, controle de linhas e acompanhamento de contratos.
+        """)
+    with st.expander("Anhanguera Educacional 01/2014 - 03/2019)"):
+        st.markdown("""
+        **Cargo:** Analista de telecomunicações
+        
+        **Principais Atividades:**
+        • Realizava a reestruturação e padronização da infraestrutura de comunicação em 54 unidades da empresa.
+        • Era responsável pelo planejamento, implantação e manutenção de sistemas de telefonia e cabeamento estruturado, garantindo alta disponibilidade e eficiência operacional.
+        • Realizava a coordenação de projetos de telefonia móvel e fixa em múltiplas unidades;
+        • Reestruturação da infraestrutura de rede e cabeamento estruturado;
+        • Suporte técnico e gestão de contratos de telefonia corporativa;
+        • Colaboração com equipes multidisciplinares para otimização de processos e redução de custos.
+        """)
+
+    with st.expander("Alpha Cons. Com. Serv. De Telecomunicações LTDA 03/1998 - 01/2012)"):
+        st.markdown("""
+        **Cargo:** Analista de telecomunicações
+        
+        **Principais Atividades:**
+        • Atuei como analista na Alpha entre 1998 e dezembro de 2000. Após esse período, assumi o cargo de coordenador.
+        • Participação em projetos com clientes corporativos como Banco Alfa e Banco ING, acompanhando todas as etapas de implantação;
+        • Desenvolvimento de soluções VOIP, integrando centrais telefônicas de forma eficiente e inovadora.
+        • Monitoramento de bases de dados para controle e atualização do inventário corporativo;
+        • Ministração de treinamentos presenciais e capacitação de equipes técnicas;
+        • Responsável pela obtenção de licenças, certificados e autorizações junto a órgãos reguladores;
+        • Supervisão de equipe composta por cinco colaboradores, promovendo alinhamento e produtividade;
+        • Criação de manual de procedimentos e avaliação das necessidades de capacitação, resultando em padronização e melhoria contínua dos processos internos.
         """)
 
 elif menu == "Habilidades":
