@@ -35,56 +35,91 @@ E-mail: silmar.tolotto@gmail.com
 Celular: (11) 9 8928-1468
 Endereço: Rua Cajati, 345 Freguesia do Ó - CEP 02729-040 São Paulo - SP
 Nascimento: 09 de março de 1969
-LinkedIn: https://www.linkedin.com/in/silmar-tolotto-0a227716
-
+LinkedIn: https://www.linkedin.com/in/silmartolottoa227716
 
 RESUMO PROFISSIONAL:
-Gerente de Projetos, Professor e Analista de Infraestrutura de TI, organizado e orientado a resultados. 
-Sólida experiência em gestão de ambientes corporativos e aplicação de metodologias ágeis. 
-Profissional com forte espírito de equipe e foco em inovação e melhoria contínua.
-
+Profissional com mais de 20 anos de experiência em coordenação de infraestrutura de TI e gestão de projetos, liderando equipes técnicas e implementando soluções tecnológicas para otimizar ambientes corporativos complexos. Atuo com foco em alta disponibilidade, segurança da informação, automação e eficiência operacional. Possuo ampla vivência em planejamento estratégico de infraestrutura, administração de servidores, redes, virtualização e governança de processos. Conduziu projetos de modernização de data centers, atualização de equipamentos e redesenho de processos em empresas nacionais e internacionais. Reconhecido pela liderança colaborativa, gestão de riscos e custos, inovação contínua e experiência docente voltada ao desenvolvimento de equipes e disseminação de conhecimento técnico.
 FORMAÇÃO ACADÊMICA:
 UNINOVE - Universidade Nove de Julho
 Administração de Redes de Computadores e Internet
 
 EXPERIÊNCIA PROFISSIONAL:
 CONVERSYS IT SOLUTIONS (01/2025 - atual)
-- Analista de Infraestrutura de TI Pleno
-- Gestão de ambientes corporativos complexos com foco em desempenho e segurança
-- Especialista em servidores, redes, virtualização e automação
+•
+Responsável pela administração e otimização de ambientes corporativos complexos, garantindo alto desempenho, disponibilidade e segurança das operações de TI.
+•
+Atuo no gerenciamento de servidores, redes, soluções de virtualização e automação de processos, com foco em eficiência, estabilidade e inovação tecnológica.
 
 Fundo Social do Estado de SP / Centro Paula Souza (10/2023 - 01/2025)
-- Professor nas áreas de Administração, Empreendedorismo e Informática
+• Professor nas áreas de Administração, Empreendedorismo e Informática
+• Atuação no desenvolvimento e condução de aulas voltadas às áreas de Administração, Empreendedorismo e Informática, com foco em promover o aprendizado prático e o pensamento crítico dos alunos.
+• Responsável pela elaboração de planos de ensino, aplicação de metodologias ativas e acompanhamento do desempenho estudantil, incentivando o desenvolvimento de competências técnicas e comportamentais voltadas ao mercado de trabalho.
 
 9NET TI, TELECOM E SERVIÇOS (07/2022 - 10/2023)
-- Gerente de Projetos: gestão técnica e operacional de infraestrutura de TI
-- Projetos: CIA Matarazzo, ALUBAR, BP Bunge
-- Aplicação de metodologias ágeis, governança e KPIs
+• Gestão completa da entrega de projetos, abrangendo cronograma, custos, escopo e integração entre equipes;
+• Gerenciamento de recursos e definição de métricas de performance;
+• Comunicação e governança de projetos, assegurando alinhamento entre áreas e partes interessadas;
+• Criação e aplicação de padrões, metodologias e processos para melhoria contínua;
+• Análise de riscos, elaboração de planos de mitigação e monitoramento de desempenho;
+• Desenvolvimento de relatórios executivos e indicadores de performance (KPIs).
+• Principais Projetos e Resultados:
+• CIA Matarazzo: Gerenciamento de um complexo composto por shoppings, dois hotéis (SORO e ROSEWOOD) e coworking (AYA). Coordenei equipes multidisciplinares para implantações de plantas CAD, softwares, equipamentos e processos operacionais.
+• Alubar: Condução de projeto internacional em Memphis (EUA), além da gestão de firewalls corporativos em localidades como Casa Rosada, Becancour, São Paulo, Coita, Miami, Barcarena e Montenegro.
+• BP Bunge: Liderança no refresh de software e equipamentos, garantindo modernização e continuidade operacional com mínimo impacto nos negócios.
 
 TFA Tecnologia (10/2020 - 07/2022)
-- Coordenador de Tecnologia
-- Gestão de equipe com Scrum e Kanban
-- Desenvolvimento de ERP para inventário de TI
+• Era responsável pela administração e infraestrutura de redes corporativas, abrangendo ambientes WAN, LAN e WLAN, além de servidores virtuais e físicos.
+• Atuava no planejamento, implementação e monitoramento de soluções tecnológicas para garantir segurança, estabilidade e performance dos sistemas. Realizava o desenho e implantação de projetos de otimização de
+rede e topologias;
+• Configuração e análise de regras de firewall e políticas de segurança;
+• Administração de servidores Hyper-V, VMware e Senha Segura;
+• Gestão de antivírus corporativo, câmeras de monitoramento e suporte técnico (Help Desk);
+• Gerenciamento de contratos de software e licenciamento;
+• Administração de Windows Server 2008/2012 R2, políticas de backup e armazenamento;
+• Gerenciamento do Microsoft 365 e Exchange Online;
+• Conhecimento em bancos de dados MySQL e SQL Server;
+• Desenvolvimento de sistemas internos e sites utilizando PHP, HTML, CSS e MySQL.
 
 Sherwin-Williams do Brasil (05/2014 - 08/2019)
-- Analista de Suporte
-- Implantação de PABX IP Cisco, rede Wi-Fi e linhas móveis
-- Gestão de contas operadoras e atualização de equipamentos de TI
+• Atuei como analista na Sherwin-Williams entre 2013 e 2016, período em que fui promovido ao cargo de coordenador.
+• Era responsável pela organização e otimização dos recursos de telefonia móvel e fixa da empresa, com foco em controle de custos, eficiência operacional e padronização de processos.
+• Criação de sistema de gestão e relatórios para monitoramento e controle dos gastos com telefonia;
+• Redução significativa de custos, diminuindo em um terço as despesas com telefonia móvel;
+• Implantação de dispositivos iOS (iPhone e iPad) para diretoria, gerências, coordenadores e equipe comercial;
+• Desenvolvimento e aplicação de política corporativa de uso de telefonia móvel e fixa;
+• Gerenciamento de equipamentos, manutenção, controle de linhas e acompanhamento de contratos.
 
-HABILIDADES E COMPETÊNCIAS:
-COMPETÊNCIAS TÉCNICAS:
-- Excel Avançado (Dashboards, VBA) - 95%
-- Análise de Dados e BI - 85%
-- AutoCAD (2D/3D, Plantas e Diagramas) - 80%
-- Infraestrutura e Redes - 90%
-- Python e Automação - 85%
+Analista de telecomunicações - Anhanguera Educacional
+jan/2012 a mar/2013
+• Realizava a reestruturação e padronização da infraestrutura de comunicação em 54 unidades da empresa.
+• Era responsável pelo planejamento, implantação e manutenção de sistemas de telefonia e cabeamento estruturado, garantindo alta disponibilidade e eficiência operacional.
+• Realizava a coordenação de projetos de telefonia móvel e fixa em múltiplas unidades;
+• Reestruturação da infraestrutura de rede e cabeamento estruturado;
+• Suporte técnico e gestão de contratos de telefonia corporativa;
+• Colaboração com equipes multidisciplinares para otimização de processos e redução de custos.
 
-COMPETÊNCIAS COMPORTAMENTAIS:
-- Liderança e Trabalho em Equipe - 90%
-- Comunicação Assertiva - 85%
-- Proatividade e Foco em Resultados - 90%
-- Pensamento Estratégico - 85%
-- Resiliência e Adaptabilidade - 95%
+Coordenador de TI - Alpha Cons. Com. Serv. De Telecomunicações LTDA
+mar/1998 a jan/2012
+• Atuei como analista na Alpha entre 1998 e dezembro de 2000. Após esse período, assumi o cargo de coordenador.
+• Participação em projetos com clientes corporativos como Banco Alfa e Banco ING, acompanhando todas as etapas de implantação;
+• Desenvolvimento de soluções VOIP, integrando centrais telefônicas de forma eficiente e inovadora.
+• Monitoramento de bases de dados para controle e atualização do inventário corporativo;
+• Ministração de treinamentos presenciais e capacitação de equipes técnicas;
+• Responsável pela obtenção de licenças, certificados e autorizações junto a órgãos reguladores;
+• Supervisão de equipe composta por cinco colaboradores, promovendo alinhamento e produtividade;
+• Criação de manual de procedimentos e avaliação das necessidades de capacitação, resultando em padronização e melhoria contínua dos processos internos.
+
+INFORMAÇÕES ADICIONAIS
+• Fluência Fundamentos da inteligência Artificial - Senac São Paulo, 2025.
+• Microsoft Power BI para Data Science - Data Science Academy,2025.
+• Fundamentos de Data Science e Inteligência Artificial - Data Science Academy, 2025.
+• AI-900 Fundamentos de IA no Azure- Fundação Bradesco, 2025.
+• Python Advanced Module, 32- Faculdade de Tecnologia de São Paulo - FATEC-SP-2025.
+• SOLUÇÕES DE IA NO GITHUB- Fundação Bradesco, 2025.
+• Gestão estratégica de TI- ITIL- Fundação Bradesco, 2017.
+• Gestão de Projetos- Fundação Bradesco, 2016.
+• Modelagem de dados-- Fundação Bradesco, 2016.
+• Inglês Básico.
 
 CERTIFICAÇÕES E CURSOS:
 - Gestão de Projetos 1 a 5
@@ -630,8 +665,3 @@ elif menu == "Atividades e Voluntariado":
 
 st.markdown("---")
 st.caption("Desenvolvido com ❤️ em Streamlit | © 2025 - Silmar Tolotto")
-
-
-
-
-
