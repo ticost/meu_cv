@@ -450,7 +450,7 @@ if menu == "Resumo":
     
     **Sólida experiência** em gestão de ambientes corporativos e aplicação de metodologias ágeis.  
     
-    **Profissional** com forte espírito de equipe e foco em inovação e melhoria contínua.
+    **Profissional** Profissional com mais de 20 anos de experiência em coordenação de infraestrutura de TI e gestão de projetos, liderando equipes técnicas e implementando soluções tecnológicas para otimizar ambientes corporativos complexos. Atuo com foco em alta disponibilidade, segurança da informação, automação e eficiência operacional. Possuo ampla vivência em planejamento estratégico de infraestrutura, administração de servidores, redes, virtualização e governança de processos. Conduziu projetos de modernização de data centers, atualização de equipamentos e redesenho de processos em empresas nacionais e internacionais. Reconhecido pela liderança colaborativa, gestão de riscos e custos, inovação contínua e experiência docente voltada ao desenvolvimento de equipes e disseminação de conhecimento técnico..
     
     ### 🎯 Objetivo
     Atuar em posições de liderança e gestão de projetos de TI, contribuindo com minha experiência 
@@ -467,7 +467,7 @@ elif menu == "Formação":
         **UNINOVE - Universidade Nove de Julho**  
         📘 *Administração de Redes de Computadores e Internet*
         
-        - **Período:** 2010 - 2013
+        - **Período:** 1998 - 2002
         - **Área de Estudo:** Redes de computadores, infraestrutura de TI, segurança da informação
         - **Projeto Final:** Implementação de rede segura para pequenas empresas
         """)
@@ -489,7 +489,7 @@ elif menu == "Experiência Profissional":
         **Cargo:** Analista de Infraestrutura de TI Pleno
         
         **Principais Responsabilidades:**
-        • Responsável pela administração e otimização de ambientes corporativos complexos, garantindo alto desempenho, disponibilidade e segurança das operações de TI.
+        - Responsável pela administração e otimização de ambientes corporativos complexos, garantindo alto desempenho, disponibilidade e segurança das operações de TI.
         • Atuo no gerenciamento de servidores, redes, soluções de virtualização e automação de processos, com foco em eficiência, estabilidade e inovação tecnológica.
         
         **Tecnologias:** VMware, Cisco, Azure, PowerShell, Python
